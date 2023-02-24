@@ -10,12 +10,12 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
-@app.route('/automation', methods = ['GET', 'POST'])
+@app.route('/automation', methods = ['Get', 'POST'])
 def run_automation():
     if request.method == 'POST':
         search_key = request.form.get('search_key')
         title = selenium_code(search_key)
-        return ("Automation execution has been completed with",title)
+        return ("Automation execution has been completed")
 
 def selenium_code(search_key):
     servis = Service('chromedriver.exe')
